@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Geist_Mono, Lexend } from "next/font/google";
+import { Bebas_Neue, Geist, Geist_Mono, Lexend } from "next/font/google";
 import "./globals.css";
+
+const geist = Geist({
+  variable: "--font-geist",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -44,7 +50,13 @@ export default function RootLayout({
   return (
     <html
       lang="en-AE"
-      className={`${lexend.variable} ${geistMono.variable} ${bebasNeue.variable} h-full scroll-smooth antialiased`}
+      className={[
+        geist.variable,
+        lexend.variable,
+        geistMono.variable,
+        bebasNeue.variable,
+        "h-full scroll-smooth antialiased",
+      ].join(" ")}
     >
       <body className="min-h-full">{children}</body>
     </html>

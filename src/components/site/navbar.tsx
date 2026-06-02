@@ -12,13 +12,13 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-5">
-      <nav className="relative mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-[#0B0A09]/92 px-4 py-3 shadow-[0_18px_42px_rgba(0,0,0,0.28)] backdrop-blur-md">
+      <nav className="relative mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-black/45 px-4 py-3 shadow-[0_18px_42px_rgba(0,0,0,0.16)] backdrop-blur-xl">
         <div className="hidden items-center gap-8 lg:flex">
           {navLinks.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-semibold text-white/80 transition hover:text-white"
+              className="text-sm font-medium text-white/85 transition hover:text-primary"
             >
               {item.label}
             </Link>
@@ -40,20 +40,20 @@ export function Navbar() {
           aria-label="Ideal Factory home"
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         >
-          <Logo className="h-8 w-auto" priority />
+          <Logo className="h-9 w-auto" priority />
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             type="button"
-            className="inline-flex h-10 items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-3 text-sm font-semibold text-white/80 transition hover:bg-white/15"
+            className="inline-flex h-10 items-center gap-2 rounded-xl border border-white/12 bg-white/8 px-3 text-sm font-semibold text-white/85 transition hover:border-primary/50 hover:text-primary"
           >
             <Globe2 className="h-4 w-4" />
             <span className="hidden sm:inline">العربية</span>
           </button>
           <Link
             href="#contact"
-            className="hidden h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-[#081214] shadow-[0_10px_25px_rgba(88,190,200,0.28)] transition hover:bg-primary-hover sm:inline-flex"
+            className="hidden h-10 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-[#062f34] shadow-[0_10px_25px_rgba(87,183,192,0.2)] transition hover:bg-primary-hover sm:inline-flex"
           >
             <Phone className="h-4 w-4" />
             Start Your Project
@@ -68,7 +68,7 @@ export function Navbar() {
               key={item.label}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block rounded-xl px-4 py-3 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
+              className="block rounded-xl px-4 py-3 text-sm font-medium text-white/85 transition hover:bg-white/10 hover:text-primary"
             >
               {item.label}
             </Link>
@@ -76,7 +76,7 @@ export function Navbar() {
           <Link
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-bold text-[#081214]"
+            className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-[#062f34]"
           >
             <Phone className="h-4 w-4" />
             Start Your Project

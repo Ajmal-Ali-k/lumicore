@@ -3,8 +3,8 @@
 :root {
   --background: #0e0e0e;
   --foreground: #ffffff;
-  --primary: #58bec8;
-  --primary-hover: #3eaab4;
+  --primary: #57b7c0;
+  --primary-hover: #46a8b1;
   --panel: #231f20;
 }
 
@@ -14,7 +14,7 @@
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-panel: var(--panel);
-  --font-sans: var(--font-lexend);
+  --font-sans: var(--font-geist);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-bebas);
 }
@@ -30,8 +30,12 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-lexend), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+}
+
+.font-lexend {
+  font-family: var(--font-lexend), Arial, Helvetica, sans-serif;
 }
 
 ::selection {
@@ -76,7 +80,7 @@ body {
 .field:focus {
   border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 4px rgba(88, 190, 200, 0.2);
+  box-shadow: 0 0 0 4px rgba(87, 183, 192, 0.2);
 }
 
 .field::placeholder {

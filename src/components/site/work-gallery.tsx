@@ -9,7 +9,7 @@ export function WorkGallery() {
   return (
     <section
       id="work"
-      className="relative isolate overflow-hidden bg-[#0E0E0E] px-5 py-24 text-white sm:px-8 lg:px-16"
+      className="relative isolate min-h-[1627px] overflow-hidden bg-[#0E0E0E] px-6 py-24 text-white sm:min-h-[1132px] sm:px-8 lg:px-16"
     >
       <div className="absolute inset-0 soft-grid opacity-55" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/60" />
@@ -18,17 +18,17 @@ export function WorkGallery() {
           <p className="text-sm font-bold uppercase tracking-[0.38em] text-primary">
             Our Work
           </p>
-          <h2 className="mt-5 text-4xl font-black leading-tight sm:text-6xl">
+          <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-5xl">
             Designed. Built. Delivered
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid auto-rows-[180px] grid-cols-2 gap-4 sm:auto-rows-[220px] md:grid-cols-4 lg:auto-rows-[250px]">
+        <div className="mt-12 grid auto-rows-[180px] grid-cols-2 gap-4 sm:auto-rows-[220px] md:grid-cols-4 lg:auto-rows-[224px]">
           {workImages.map((image, index) => (
             <Reveal
-              key={`${image.src}-${index}`}
+              key={image.src + "-" + index}
               delay={index * 55}
-              className={`relative overflow-hidden rounded-2xl ${image.className}`}
+              className={"relative overflow-hidden rounded-2xl " + image.className}
             >
               <Image
                 src={image.src}
@@ -44,7 +44,7 @@ export function WorkGallery() {
         <div className="mt-12 text-center">
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/30 transition hover:bg-primary-hover"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition hover:bg-primary-hover"
           >
             Explore Projects
             <ArrowRight className="h-4 w-4" />

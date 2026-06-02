@@ -31,20 +31,20 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E] via-transparent to-transparent" />
       <div className="relative mx-auto flex min-h-svh w-full max-w-7xl items-center justify-center px-5 pt-24 text-center sm:px-8">
         <Reveal className="mx-auto max-w-6xl">
-          <h1 className="text-balance text-[clamp(2.35rem,5vw,3.75rem)] font-black leading-[1.05] tracking-normal text-white">
+          <h1 className="font-lexend text-balance text-4xl font-bold leading-[1.05] tracking-normal text-white sm:text-5xl lg:text-[3.6rem]">
             Design &amp; Delivery of
             <br />
             <span className="text-primary">
               Your Villa Interiors Made Simple
             </span>
           </h1>
-          <p className="mx-auto mt-5 max-w-5xl text-pretty text-base font-medium leading-relaxed text-white sm:text-lg">
+          <p className="font-lexend mx-auto mt-5 max-w-5xl text-pretty text-sm font-normal leading-[1.625] text-white sm:text-base">
             Kitchens, closets, doors, and premium uPVC windows designed,
             manufactured, and installed by one trusted Emirati factory.
           </p>
           <Link
             href="#contact"
-            className="mt-7 inline-flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-white px-6 text-sm font-bold text-[#0E0E0E] shadow-2xl transition hover:bg-primary hover:text-white sm:px-8"
+            className="font-lexend mt-7 inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-6 py-4 text-sm font-semibold text-[#0E0E0E] shadow-2xl transition hover:bg-primary hover:text-white sm:px-8"
           >
             Get Your FREE 3D Design Now
             <ArrowRight className="h-4 w-4" />

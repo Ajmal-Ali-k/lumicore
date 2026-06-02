@@ -16,7 +16,7 @@ export function Footer() {
         className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/85 to-black/95" />
-      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-16">
+      <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-5">
             <Logo className="h-9 w-auto" />

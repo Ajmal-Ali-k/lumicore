@@ -1,14 +1,14 @@
 import {
   Box,
   Check,
+  ChefHat,
   DoorOpen,
   Hammer,
   Layers3,
+  Maximize,
   Phone,
-  Ruler,
   Send,
   Shirt,
-  Sparkles,
   Upload,
   Wrench,
 } from "lucide-react";
@@ -26,7 +26,7 @@ export const services = [
     description: "Designed for daily use, built for long-term performance",
     href: "#contact",
     image: "/images/home/kitchen-product-image.webp",
-    Icon: Ruler,
+    Icon: ChefHat,
   },
   {
     title: "Wardrobes & Closets",
@@ -47,7 +47,7 @@ export const services = [
     description: "Sealed systems for better comfort and control",
     href: "#contact",
     image: "/images/home/window-systems-image.webp",
-    Icon: Sparkles,
+    Icon: Maximize,
   },
 ];
 
