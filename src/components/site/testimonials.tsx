@@ -1,22 +1,15 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { useState } from "react";
+import { useRef } from "react";
+import type { Swiper as SwiperInstance } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import { testimonials } from "@/lib/content";
 import { Reveal } from "./reveal";
 
 export function Testimonials() {
-  const [active, setActive] = useState(0);
-  const maxIndex = Math.max(testimonials.length - 2, 0);
-
-  const previous = () => {
-    setActive((current) => (current <= 0 ? maxIndex : current - 1));
-  };
-
-  const next = () => {
-    setActive((current) => (current >= maxIndex ? 0 : current + 1));
-  };
+  const swiperRef = useRef<SwiperInstance | null>(null);
 
   return (
     <section
@@ -39,7 +32,7 @@ export function Testimonials() {
             <button
               type="button"
               aria-label="Previous testimonial"
-              onClick={previous}
+              onClick={() => swiperRef.current?.slidePrev()}
               className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-primary hover:text-primary"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -47,7 +40,7 @@ export function Testimonials() {
             <button
               type="button"
               aria-label="Next testimonial"
-              onClick={next}
+              onClick={() => swiperRef.current?.slideNext()}
               className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white transition hover:bg-primary-hover"
             >
               <ChevronRight className="h-5 w-5" />
@@ -55,17 +48,33 @@ export function Testimonials() {
           </div>
         </Reveal>
 
-        <Reveal delay={120} className="overflow-visible lg:-mr-[360px]">
-          <div className="overflow-hidden lg:overflow-visible">
-            <div
-              className="flex gap-4 transition-transform duration-500 ease-out"
-              style={{ transform: "translateX(-" + active * 354 + "px)" }}
-            >
-              {testimonials.map((testimonial) => (
-                <article
-                  key={testimonial.name}
-                  className="relative flex h-[267px] w-[min(338px,80vw)] shrink-0 flex-col rounded-2xl p-7 shadow-[0px_0px_12px_rgba(255,255,255,0.2)]"
-                >
+        <Reveal delay={120} className="min-w-0 overflow-hidden lg:-mr-[220px] lg:overflow-visible">
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            rewind
+            slidesPerView="auto"
+            spaceBetween={20}
+            speed={520}
+            grabCursor
+            watchOverflow
+            breakpoints={{
+              768: {
+                spaceBetween: 24,
+              },
+              1024: {
+                spaceBetween: 24,
+              },
+            }}
+            className="testimonials-swiper !overflow-visible"
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide
+                key={testimonial.name}
+                className="!h-auto !w-[min(338px,82vw)]"
+              >
+                <article className="relative flex h-[267px] flex-col rounded-2xl p-7 shadow-[0px_0px_12px_rgba(255,255,255,0.2)]">
                   <Quote className="h-9 w-9 text-primary" />
                   <p className="mt-5 flex-1 text-sm leading-relaxed text-white/80">
                     {testimonial.quote}
@@ -79,9 +88,9 @@ export function Testimonials() {
                     </p>
                   </div>
                 </article>
-              ))}
-            </div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </Reveal>
       </div>
     </section>
